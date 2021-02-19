@@ -1,0 +1,59 @@
+﻿@page
+@model ASP.NET_Core_Fundamentals.Pages.Movies.ListModel
+@{
+	ViewData["Title"] = "Movies";
+
+}
+
+<script src="https://kit.fontawesome.com/88fd76f067.js" crossorigin="anonymous"></script>
+<h1>List of Movies</h1>
+
+<form method="get">
+	<div class="form-group">
+		<div class="input-group">
+			<input type="search" class="form-control" asp-for="SearchTerm" />
+			<span class="input-group-btn">
+				<button class="btn btn-default">
+					<i class="fas fa-search"></i>
+				</button>
+			</span>
+		</div>
+	</div>
+</form>
+<a class="btn btn-light" asp-page="./Edit">Add New</a>
+
+<table class="table">
+	<tr>
+		<td>Title:</td>
+		<td>EpisodeId</td>
+		<td>OpeningCrawl</td>
+		<td>Director</td>
+		<td>Producer</td>
+		<td>ReleaseDate</td>
+		<td>Rating</td>
+	</tr>
+
+	@foreach (var movie in Model.Movies)
+	{
+
+		<tr>
+			<td>@movie.Title</td>
+			<td>@movie.EpisodeId</td>
+			<td>@movie.OpeningCrawl</td>
+			<td>@movie.Director</td>
+			<td>@movie.Producer</td>
+			<td>@movie.ReleaseDate</td>
+			<td>@movie.Rating</td>
+
+			<td>
+				<a asp-page="./Detail" asp-route-movieId="@movie.MovieId"><i class="fas fa-info-circle"></i></a>
+			<td>
+				<a asp-page="./Edit" asp-route-movieId="@movie.MovieId"><i class="fas fa-edit"></i></a>
+			</td>
+			<td>
+				<a asp-page="./Delete" asp-route-movieId="@movie.MovieId"><i class="fas fa-trash-alt"></i> </a>
+			</td>
+
+		</tr>
+	}
+</table>

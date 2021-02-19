@@ -1,0 +1,43 @@
+﻿@page "{movieId:int}"
+@model ASP.NET_Core_Fundamentals.Pages.Movies.DetailModel
+
+
+<h2>@Model.Movie.Title</h2>
+@if (Model.Message != null)
+{
+	<div class="alert alert-info">@Model.Message</div>
+}
+<table class="table">
+	<tr>
+		<td>Title:</td>
+		<td>EpisodeId</td>
+		<td>OpeningCrawl</td>
+		<td>Director</td>
+		<td>Producer</td>
+		<td>ReleaseDate</td>
+		<td>Characters</td>
+		<td>Planets</td>
+		<td>Species</td>
+		<td>Vehicles</td>
+		<td>Starships</td>
+		<td>Rating</td>
+	</tr>
+
+	<tr>
+		<td>@Model.Movie.Title</td>
+		<td>@Model.Movie.EpisodeId</td>
+		<td>@Model.Movie.OpeningCrawl</td>
+		<td>@Model.Movie.Director</td>
+		<td>@Model.Movie.Producer</td>
+		<td>@Model.Movie.ReleaseDate</td>
+		<td>@Model.Movie.Characters</td>
+		<td>@Model.Movie.Planets</td>
+		<td>@Model.Movie.Species</td>
+		<td>@Model.Movie.Vehicles</td>
+		<td>@Model.Movie.Starships</td>
+		<td>@Model.Movie.Rating</td>
+	</tr>
+
+</table>
+
+<a asp-page="./List" class="btn btn-light">All Movies</a>

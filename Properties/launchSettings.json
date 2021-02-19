@@ -1,0 +1,22 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/ASP.NET Core Fundamentals",
+      "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "http://localhost:43582/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "ASP.NET Core Fundamentals": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:43582/",
+      "applicationUrl": "https://localhost:44342/"
+    }
+  }
+}

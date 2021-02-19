@@ -1,0 +1,90 @@
+﻿@page "{movieId:int?}"
+@model ASP.NET_Core_Fundamentals.Pages.Movies.EditModel
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<h2>Editing @Model.Movie.Title</h2>
+
+<form method="post">
+
+	<input type="hidden" asp-for="Movie.MovieId" />
+	<div class="form-group">
+		<label asp-for="Movie.Title"></label>
+		<input asp-for="Movie.Title" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.Title"></span>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Movie.EpisodeId"></label>
+		<input asp-for="Movie.EpisodeId" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.EpisodeId"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.OpeningCrawl"></label>
+		<input asp-for="Movie.OpeningCrawl" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.OpeningCrawl"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.Director"></label>
+		<input asp-for="Movie.Director" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.Director"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.Producer"></label>
+		<input asp-for="Movie.Producer" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.Producer"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.ReleaseDate"></label>
+		<input asp-for="Movie.ReleaseDate" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.ReleaseDate"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.Characters"></label>
+		<input asp-for="Movie.Characters" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.Characters"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.Planets"></label>
+		<input asp-for="Movie.Planets" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.Planets"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.Species"></label>
+		<input asp-for="Movie.Species" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.Species"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.Vehicles"></label>
+		<input asp-for="Movie.Vehicles" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.Vehicles"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.Starships"></label>
+		<input asp-for="Movie.Starships" class="form-control" />
+		<span class="text-danger" asp-validation-for="Movie.Starships"></span>
+
+	</div>
+	<div class="form-group">
+		<label asp-for="Movie.Rating"></label>
+		<select class="form-control" asp-for="Movie.Rating" asp-items="Model.Ratings">
+		</select>
+		<span class="text-danger" asp-validation-for="Movie.Rating"></span>
+	</div>
+
+	<button type="submit" class="btn btn-light">Save</button>
+</form>
+
+@section Scripts{
+	<partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,46 @@
+﻿@page
+@model ASP.NET_Core_Fundamentals.Pages.Movies.ClientMoviesModel
+@{
+	ViewData["Title"] = "ClientMovies";
+}
+
+<h2>Client Movies</h2>
+
+<table class="table" id="movies">
+	
+</table>
+
+@section Scripts{
+
+	<script src="\node_modules\datatables.net\js\jquery.dataTables.js"></script>
+	<link href="\node_modules\datatables.net-bs4\css\dataTables.bootstrap4.css" rel="stylesheet" />
+	<script src="\node_modules\datatables.net-bs4\js\dataTables.bootstrap4.js"></script>
+
+	<script>
+
+		$(function () {
+			var rating = ["None", "One", "Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"]
+			$.ajax("/api/movies/",
+				{ method: "get" })
+				.then(function (response) {
+					$("#movies").dataTable({
+						data: response,
+						
+						columns: [
+							{ "data": "title" },
+							{ "data": "director" },
+							{ "data": "producer" },
+							{ 
+								"data": "rating", "render": function (data) {
+									return rating[data];
+								}
+							}
+
+						]
+					});
+				});
+		});
+
+	</script>
+}
+

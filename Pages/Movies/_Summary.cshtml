@@ -1,0 +1,23 @@
+﻿@using Fundamentals.Core
+@model Movie
+
+<div class="modal-content">
+	<div class="modal-header" style="background-color:cornflowerblue">
+		<h3>@Model.Title</h3>
+	</div>
+	@*<div class="modal-body"  style="background-color:darkgray"></div>*@
+	<span>Director: @Model.Director</span>
+	<span>EpisodeId: @Model.EpisodeId</span>
+	<span>OpeningCrawl: @Model.OpeningCrawl</span>
+	<span>ReleaseDate: @Model.ReleaseDate</span>
+	<span>Producer: @Model.Producer</span>
+	<span>Rating: @Model.Rating</span>
+
+
+	<div class="modal-footer" style="background-color:darkgray">
+		<a asp-page="./Detail" asp-route-movieId="@Model.MovieId"><i class="fas fa-info-circle"></i></a>
+		<a asp-page="./Edit" asp-route-movieId="@Model.MovieId"><i class="fas fa-edit"></i></a>
+		<a asp-page="./Delete" asp-route-movieId="@Model.MovieId"><i class="fas fa-trash-alt"></i> </a>
+	</div>
+
+</div>
